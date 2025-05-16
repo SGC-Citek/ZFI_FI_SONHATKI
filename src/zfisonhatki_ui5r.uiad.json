@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Sổ nhật ký chung",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD"
+  },
+  "ui5AppDetails": {
+    "appId": "zfisonhatki"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_7E42079DC993931D844400E7FFE73207BD5C03EE_TM",
+    "semanticObject": "zfisonhatki",
+    "action": "view",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_7E42079DC993931D844400E7FFE73207BD5C03EE_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Sổ nhật ký chung",
+        "subtitle": "ZGL04"
+      }
+    }
+  ]
+}

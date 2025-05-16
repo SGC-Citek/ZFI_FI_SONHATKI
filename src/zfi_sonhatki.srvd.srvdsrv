@@ -1,0 +1,4 @@
+@EndUserText.label: 'Sổ nhật kí serviecs definitions'
+define service ZFI_SONHATKI {
+  expose ZFI_I_SONHATKI;
+}

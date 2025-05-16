@@ -1,0 +1,173 @@
+@Metadata.layer: #CORE
+@UI: {
+       headerInfo: {
+            typeName: 'SoNhatKi',
+            typeNamePlural: 'Sổ Nhật Kí Chung',
+            title: {
+                    type: #STANDARD,
+                    label: 'Sổ nhật kí'
+            }
+       },
+    presentationVariant: [{ sortOrder: [ { by:'PostingDate', direction: #ASC } ] }]
+}
+annotate view ZFI_I_SONHATKI
+    with parameters
+    @EndUserText.label: 'Từ ngày'
+    FromDate,
+    @EndUserText.label: 'Đến ngày'
+    ToDate,
+    @EndUserText.label: 'Include Reversed Documents'
+    @Consumption.defaultValue: 'X' 
+    IncludeReversedDocuments
+{
+    @UI.facet: [ { id:              'SoNhatKi',
+                purpose:         #STANDARD,
+                type:            #IDENTIFICATION_REFERENCE,
+                label:           'Sổ Nhật Kí Chung',
+                position:        10 }]
+    @UI: { 
+         selectionField: [{ position: 10 }]}
+     @UI: { lineItem: [{ position: 280 }]}
+    @Consumption.filter: {multipleSelections: true,selectionType: #RANGE, mandatory: true}
+    @Consumption.valueHelpDefinition: [{ entity: {
+        name: 'I_CompanyCode',
+        element: 'CompanyCode'
+    } }]
+    CompanyCode;
+    
+    @UI: { lineItem: [{ position: 10 }],
+         identification: [{ position: 10 }]}
+    @EndUserText.label: 'Ngày ghi sổ'
+    PostingDate;
+    
+    @UI: { lineItem: [{ position: 20 }],
+         identification: [{ position: 20 }]}
+    @EndUserText.label: 'Ngày chứng từ'
+    DocumentDate;
+    
+     @UI: { lineItem: [{ position: 30 }],
+         identification: [{ position: 30 }],
+         selectionField: [{ position: 40 }]}
+     @Consumption.filter: {multipleSelections: true,selectionType: #RANGE}
+     @EndUserText.label: 'Số chứng từ'
+    AccountingDocument;
+    
+    @UI: { lineItem: [{ position: 40 }],
+         identification: [{ position: 40 }]}
+    @EndUserText.label: 'Reversal Reference Document'
+    ReversalReferenceDocument;
+    
+    @UI: { lineItem: [{ position: 50 }],
+         identification: [{ position: 50 }]}
+    @EndUserText.label: 'Số hóa đơn'
+    DocumentReferenceID;
+    
+     @UI: { lineItem: [{ position: 60 }],
+         identification: [{ position: 60 }]}
+     @EndUserText.label: 'Mã đối tượng'
+    cus_sup;
+    
+     @UI: { lineItem: [{ position: 70 }],
+         identification: [{ position: 70 }]}
+     @EndUserText.label: 'Tên đối tượng'
+    ten_dt;
+    
+    @UI: { lineItem: [{ position: 80 }],
+         identification: [{ position: 80 }]}
+     @EndUserText.label: 'Mã đối tượng (Customer Segment)'
+    cus_segment;
+    
+     @UI: { lineItem: [{ position: 90 }],
+         identification: [{ position: 90 }]}
+     @EndUserText.label: 'Tên đối tượng (Customer Segment)'
+    name_cus_segment;
+    
+     @UI: { lineItem: [{ position: 100 }],
+         identification: [{ position: 100 }]}
+    @EndUserText.label: 'Diễn giải'
+    dien_giai;
+
+     @UI: { lineItem: [{ position: 110 }],
+         identification: [{ position: 110 }]}
+     @EndUserText.label: 'Tài khoản'
+     GLAccount;
+     
+     @UI.lineItem: [{ position: 120 }]
+     @EndUserText.label: 'Tài khoản đối ứng'
+     tk_doi_ung;
+     
+     @UI: { lineItem: [{ position: 130 }],
+         identification: [{ position: 130 }]}
+    @EndUserText.label: 'Loại tiền'     
+    TransactionCurrency;
+    
+    
+     @UI: { lineItem: [{ position: 140 }],
+         identification: [{ position: 140 }]}
+     @EndUserText.label: 'Nợ (VND)'
+    no_VND;
+    
+     @UI: { lineItem: [{ position: 150 }],
+         identification: [{ position: 150 }]}
+     @EndUserText.label: 'Có (VND)'    
+    co_VND;
+    
+     @UI: { lineItem: [{ position: 160 }],
+         identification: [{ position: 160 }]}
+    @EndUserText.label: 'Nợ (Ngoại tệ)'
+    no_NT;
+    
+     @UI: { lineItem: [{ position: 170 }],
+         identification: [{ position: 170 }]}
+    @EndUserText.label: 'Có (Ngoại tệ)'     
+    co_NT;
+    
+     @UI: { lineItem: [{ position: 180 }],
+         identification: [{ position: 180 }]}
+    @EndUserText.label: 'Bộ phận'
+    CostCenter;
+    
+     @UI: { lineItem: [{ position: 190 }],
+         identification: [{ position: 190 }]}
+    @EndUserText.label: 'Vụ việc'
+    vuviec;
+    
+     @UI: { lineItem: [{ position: 200 }],
+         identification: [{ position: 200 }]}
+    @EndUserText.label: 'Sản phẩm'
+    Product;
+    
+     @UI: { lineItem: [{ position: 210 }],
+         identification: [{ position: 210 }]}
+    @EndUserText.label: 'Hợp đồng'
+    AssetContract;
+    
+     @UI: { lineItem: [{ position: 220 }],
+         identification: [{ position: 220 }]}
+     @EndUserText.label: 'Ngày tạo'
+    ngay_tao;
+    
+     @UI: { lineItem: [{ position: 230 }],
+         identification: [{ position: 230 }]}
+    @EndUserText.label: 'Ngày sửa'
+    JournalEntryLastChangeDateTime;
+    
+     @UI: { lineItem: [{ position: 240 }],
+         identification: [{ position: 240 }]}
+     @EndUserText.label: 'Người tạo'
+    AccountingDocCreatedByUser;   
+      
+    @UI: { lineItem: [{ position: 250 }]}
+    LedgerGLLineItem;
+    
+    @UI: { lineItem: [{ position: 260 }]}
+    CompanyCodeCurrency;
+    
+    @UI: { selectionField: [{ position: 30 }]}
+    @UI: { lineItem: [{ position: 270 }]}
+    @Consumption.filter.mandatory: true
+    FiscalYear;
+    
+    @UI: { lineItem: [{ position: 290 }]}
+    AccountingDocumentType;
+}
